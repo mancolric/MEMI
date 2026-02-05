@@ -26,6 +26,8 @@ git clone https://github.com/mancolric/MEMI.git
 ```
 para Linux y MacOS, donde `<TuUsuario>` debe ser reemplazado por tu nombre de usuario. 
 
+En el caso de usar Windows, es posible que `git` no esté instalado. En ese caso, hay que descargarlo e instalarlo desde [https://git-scm.com/install/windows](https://git-scm.com/install/windows), seleccionando la opción "Usar Git desde la ventana de comandos".  
+
 Después del paso 2, debe haber una carpeta `MEMI` dentro de la carpeta `MATLAB`, que a su vez está ubicada en `Mis documentos` o `~/Documentos/`.
 
 **3. Actualizar el directorio de MATLAB**. Abrir `MATLAB->Home->Preferences->SetPath`, y añadir la carpeta `MEMI` y sus subcarpetas al directorio de MATLAB. De esta forma, MATLAB podrá encontrar los archivos que hay dentro de `MEMI`.
