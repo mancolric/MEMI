@@ -15,7 +15,7 @@ function [f,J] = Polin_residuo(x, CalcJ)
     %Jacobiano, si es necesario:
     if CalcJ
         J                   = zeros(???);
-        %df_i/dx_j = 2*x_j*(x_i-1) + S_i*delta_ij
+        %df_i/dx_j = 2*x_j*(x_i-cos(2*pi*i/N)) + (S+i)*delta_ij
         for ii=1:N
             for jj=1:N
                 J(ii,jj)    = 2*x(jj)*(???) + (???)*(ii==jj);
