@@ -1,0 +1,28 @@
+function [f,J] = Polin_residuo(x, CalcJ)    
+
+    %N'umero de variables:
+    N           = length(x);
+    
+    %T'ermino S=sum_k x_k^2:
+    S           = sum(x.^2);
+    
+    %Residuo:
+    f           = zeros(N,1);
+    for ii=1:N
+        f(ii)   = (S+ii)*(x(ii)-cos(2*pi*ii/N));
+    end
+    
+    %Jacobiano, si es necesario:
+    if CalcJ
+        J                   = zeros(N, N);
+        %df_i/dx_j = 2*x_j*(x_i-cos(2*pi*i/N)) + (S+i)*delta_ij
+        for ii=1:N
+            for jj=1:N
+                J(ii,jj)    = 2*x(jj)*(x(ii)-cos(2*pi*ii/N)) + (S+ii)*(ii==jj);
+            end
+        end
+    else
+        J       = NaN;
+    end
+    
+end
