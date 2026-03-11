@@ -20,12 +20,12 @@ function SL_CircuitoElectrico(N)
         %Nodo interior:
         filasv  = cat(2, filasv, ii, ii, ii, ii);
         colsv   = cat(2, colsv, ii, ii-1, ii+1, N+ii);
-        valsv   = cat(2, valsv, 3*R, -R, -R, -R);
+        valsv   = cat(2, valsv, 3/R, -1/R, -1/R, -1/R);
             
         %Nodo exterior:
         filasv  = cat(2, filasv, N+ii, N+ii, N+ii, N+ii);
         colsv   = cat(2, colsv, N+ii, N+ii-1, N+ii+1, ii);
-        valsv   = cat(2, valsv, 3*R, -R, -R, -R);
+        valsv   = cat(2, valsv, 3/R, -1/R, -1/R, -1/R);
         
     end
     
