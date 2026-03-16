@@ -1,7 +1,7 @@
 function Chandrasekhar_Anderson(N) 
 
     %Aproximaci'on inicial:
-    H0                  = zeros(N,1);
+    H0                  = ones(N,1);
     
     %Iniciamos cron'ometro:
     t1                  = tic();
@@ -17,7 +17,7 @@ function Chandrasekhar_Anderson(N)
     end
 
     %Resolvemos con Anderson:
-    [H, nIters, flag]   = Anderson1(@gfun, H0, 1e-8, 100, 10);
+    [H, nIters, flag]   = Anderson1(@gfun, H0, 1e-8, 100, 20);
     
     %Paramos cron'ometro:
     t2                  = toc(t1);

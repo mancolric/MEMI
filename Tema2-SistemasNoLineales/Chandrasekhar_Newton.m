@@ -1,7 +1,7 @@
 function Chandrasekhar_Newton(N)
 
     %Aproximaci'on inicial:
-    H0                  = zeros(N,1);
+    H0                  = ones(N,1);
     
     %Resolvemos con Newton--Raphson:
     t1                  = tic();
