@@ -26,7 +26,7 @@ function [tv, ym] = RungeKuttaE(fun, t0, y0, metodo, Deltat, tf)
         if tnp1>tf
             tnp1    = XX;
         end
-        Deltatn     = tnp1-tn;
+        Deltatn     = tnp1-XX;
         
         %Recorremos etapas:
         for ii=2:s

@@ -14,7 +14,7 @@ function [A, b, c, s] = CoefsRK(metodo)
             b   = [ 0.0;    1.0 ];
             c   = [ 0.0;    0.5 ];
             s   = 2;
-        case 'RK4' %Classic RK4
+        case 'RK4' %RK4 cl'asico
             A   = [ 0.0     0.0     0.0     0.0;
                     0.5     0.0     0.0     0.0;
                     0.0     0.5     0.0     0.0; 
@@ -36,7 +36,8 @@ function [A, b, c, s] = CoefsRK(metodo)
             b   = [ 0.0;    1.0 ];
             c   = [ 0.0;    0.5];
             s   = 2;
-        case 'RK3I' %Ascher et al ANM1997
+        
+        case 'RK3I' %Ascher et al., ANM1997
             A   = [ 0.0     0.0     0.0     0.0     0.0
                     0.0     1/2     0.0     0.0     0.0
                     0.0     1/6     1/2     0.0     0.0
@@ -46,35 +47,11 @@ function [A, b, c, s] = CoefsRK(metodo)
             c   = sum(A,2);
             s   = size(A,1);
             
-        case 'RK4I' %Hairer and Wanner
-            A   = [ 0.0     0.0         0.0         0.0     0.0     0.0; 
-                    0.0     0.25        0.0         0.0     0.0     0.0;
-                    0.0     0.5         0.25        0.0     0.0     0.0;
-                    0.0     17/50       -1/25       1/4     0.0     0.0;
-                    0.0     371/1360    -137/2720   15/544  1/4     0.0;     
-                    0.0     25/24       -49/48      125/16  -85/12  1/4 ];
-            b   = A(end,:).';
-            c   = sum(A,2);
-            s   = size(A,1);
-        
-%         case 'RK4I' %Kennedy and Carpenter, ANM2019
-%             
-%             [A, bhat, c]    = ESDIRK4_3_7L_2_SA();
-%             b               = A(end,:).';
-%             s               = size(A,1);
-%             
-%         case 'BPR3'
-%         
-%             %3rd order RK BPR(3,5,3) from Boscarino et al (2012):
-%             A       = [ 0.0     0.0     0.0     0.0     0.0
-%                         0.5     0.5     0.0     0.0     0.0 
-%                         5/18    -1/9    0.5     0.0     0.0 
-%                         0.5     0.0     0.0     0.5     0.0 
-%                         0.25    0.0     0.75    -0.5    0.5 ];
-% %             b       = [ 0.5     0.0     0.0     0.5     0.0 ].';
-%             b       = [ 5/18    -1/9    0.5     0.0     0.0 ].';
-%             c       = sum(A,2);
-%             s       = length(c);
+        case 'RK4I' %Kennedy and Carpenter, ANM2019
+            
+            [A, bhat, c]    = ESDIRK4_3_7L_2_SA();
+            b               = A(end,:).';
+            s               = size(A,1);
         
         otherwise
             error('Metodo desconocido')
