@@ -8,6 +8,14 @@ Manuel Colera Rico (Universidad Politécnica de Madrid)
 
 El material se ha desarrollado con la intención de facilitar el estudio de la asignatura. Por favor, si encuentras cualquier errata, necesitas clarificación sobre alguno de los contenidos, o tienes cualquier sugerencia, no dudes en escribir a m.colera@upm.es.
 
+### Tutorías
+
+Por favor, solicitad las tutorías anteriores a la PEP2 a través de [este enlace](https://calendar.app.google/MVdacht7UvPznuNbA), o bien preguntándome directamente en los descansos entre clase y clase.
+
+### Encuesta
+
+Vuestra opinión sobre la asignatura y sobre los profesores es muy importante para que podamos mejorar. Por favor, os agradeceríamos mucho que completaseis [la encuesta de la UPM](https://servicios.upm.es/encuestas).
+
 ### Instalación
 
 **1. Instalar [MATLAB](https://es.mathworks.com/products/matlab.html)**. Después de la instalación, debe aparecer una carpeta llamada `MATLAB` dentro de la carpeta `Mis documentos` o `~/Documentos/` (la carpeta puede variar según el sistema operativo y/o el idioma).
