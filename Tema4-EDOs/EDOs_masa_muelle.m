@@ -13,8 +13,9 @@ function EDOs_masa_muelle(metodo, Deltat, tf)
     %Ecuaci'on a integrar:
     function ydot = ydot_fun(t,y)
         
-        A       = [ 0.0 1.0; -k/m -c/m ];
-        ydot    = A*y;
+        x       = y(1);
+        v       = y(2);
+        ydot    = [ v; -k*x/m-c*v/m ];
         
     end
 
@@ -36,10 +37,10 @@ function EDOs_masa_muelle(metodo, Deltat, tf)
     %Representamos soluci'on:
     ym_ex       = ytheor_fun(tv);
     figure()
-    plot(tv, ym_ex(1,:), 'b')
+    plot(tv, ym_ex(1,:), '--b')
     hold on
-    plot(tv, ym_ex(2,:), 'r')
-    plot(tv, ym(1,:), 'c')
+    plot(tv, ym_ex(2,:), '--g')
+    plot(tv, ym(1,:), 'b')
     plot(tv, ym(2,:), 'g')
     xlabel('t')
     legend('x_{ex}', 'v_{ex}', 'x_{num}', 'v_{num}', 'location', 'bestoutside')
