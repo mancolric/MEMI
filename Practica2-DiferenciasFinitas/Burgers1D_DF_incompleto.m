@@ -1,10 +1,10 @@
 function Burgers1D_DF(epsilon, Nx)
 
     %Creamos mallado:
-    xv          = linspace(0.0, 2.0, ??).';
+    xv          = linspace(0.0, 2.0, XX).';
     
     %Aproximaci'on inicial:
-    uv0         = ??;
+    uv0         = XX;
     
     %Resolvemos con Newton:
     tic
@@ -31,7 +31,7 @@ function Burgers1D_DF(epsilon, Nx)
     %Mostramos error y tama'no de malla:
     err         = norm(XX, Inf);
     display(err)
-    h           = XX;
-    display(h)
+    hx          = XX;
+    display(hx)
     
 end
