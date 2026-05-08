@@ -46,7 +46,7 @@ function [tv, ym] = RungeKuttaEIN1(fun, t0, y0, metodo, Deltat, tf)
             %NOTA: Si no se ha hallado la factorizaci'on, se puede hacer
             %simplemente
 %             y_ii                = (eye(length(yn)) - Deltatn*gamma*Jn)\z_ii;
-            %aunque es un poco m'as lento.
+            %aunque es m'as lento.
             
             %Guardar derivada y fhat:
             fm(:,ii)            = fun(t_ii, y_ii, false);

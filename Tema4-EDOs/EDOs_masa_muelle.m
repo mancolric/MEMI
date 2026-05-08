@@ -15,11 +15,11 @@ function EDOs_masa_muelle(metodo, Deltat, tf)
         
         x       = y(1);
         v       = y(2);
-        ydot    = [ v; -k*x/m-c*v/m ];
+        ydot    = [ v; -k*x/m-c*v/m ]; %ydot=f en los apuntes
         
     end
 
-    %Soluci'on te'orica:
+    %Soluci'on exacta:
     function y = ytheor_fun(t) %t puede ser un vector fila
         
         lambda1     = (-c + sqrt(c^2 - 4*m*k))/(2*m);

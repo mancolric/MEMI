@@ -1,12 +1,18 @@
 %Prothero--Robinson:
 %   Probar primero con mu=-1, RK4, Deltat=1e-2, tf=20.
 %   Probar luego con mu=-1000 y mu=-10^6
-function EDOs_ProtheroRobinson_RKE(mu, metodo, Deltat, tf) 
+%OJO! Llamar a m'etodo impl'icito (terminado en 'I')
+function EDOs_ProtheroRobinson_RKI(mu, metodo, Deltat, tf) 
 
     %Ecuaci'on a integrar:
-    function ydot = ydot_fun(t,y)
+    function [f, df_dy] = ydot_fun(t, y, CalcJ)
         
-        ydot    = [ mu*(y(1)-sin(t)) + cos(t) ]; %ydot = f en los apuntes
+        f           = [ mu*(y(1)-sin(t)) + cos(t) ];
+        if CalcJ
+            df_dy   = [ mu ];
+        else
+            df_dy   = NaN;
+        end
         
     end
 
@@ -14,7 +20,7 @@ function EDOs_ProtheroRobinson_RKE(mu, metodo, Deltat, tf)
     tic
     t0          = 0.0;
     y0          = [0.0];
-    [tv, ym]    = RungeKuttaE(@ydot_fun, t0, y0, metodo, Deltat, tf);
+    [tv, ym]    = RungeKuttaI(@ydot_fun, t0, y0, metodo, Deltat, tf);
     toc
     
     %Soluci'on exacta
